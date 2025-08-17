@@ -1,18 +1,19 @@
 package cn.dancingsnow.antilootgame;
 
-import cn.dancingsnow.antilootgame.waila.WailaCompat;
+import cn.dancingsnow.antilootgame.network.RequestTypePacket;
+import cn.dancingsnow.antilootgame.network.RequestTypePacketHandler;
+
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
-import mcp.mobius.waila.api.impl.ModuleRegistrar;
-import ru.timeconqueror.lootgames.registry.LGBlocks;
+import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.relauncher.Side;
 
 public class CommonProxy {
 
     public void loadComplete(FMLLoadCompleteEvent event) {
-        ModuleRegistrar.instance().registerHeadProvider(WailaCompat.INSTANCE, LGBlocks.MS_MASTER.getClass());
-        ModuleRegistrar.instance()
-            .registerBodyProvider(WailaCompat.INSTANCE, LGBlocks.SMART_SUBORDINATE.getClass());
-        ModuleRegistrar.instance()
-            .registerNBTProvider(WailaCompat.INSTANCE, LGBlocks.SMART_SUBORDINATE.getClass());
+
     }
 
+    public void preInit(FMLPreInitializationEvent event) {
+        AntiLootGame.NETWORK.registerMessage(RequestTypePacketHandler.class, RequestTypePacket.class, 0, Side.SERVER);
+    }
 }
