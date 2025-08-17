@@ -2,7 +2,6 @@ package cn.dancingsnow.antilootgame;
 
 import cn.dancingsnow.antilootgame.network.RequestTypePacket;
 import cn.dancingsnow.antilootgame.network.RequestTypePacketHandler;
-
 import cpw.mods.fml.common.event.FMLLoadCompleteEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import cpw.mods.fml.relauncher.Side;

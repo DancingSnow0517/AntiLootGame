@@ -8,8 +8,7 @@ public class RequestTypePacket implements IMessage {
 
     private BlockPos pos;
 
-    public RequestTypePacket() {
-    }
+    public RequestTypePacket() {}
 
     public RequestTypePacket(BlockPos blockPos) {
         pos = blockPos;

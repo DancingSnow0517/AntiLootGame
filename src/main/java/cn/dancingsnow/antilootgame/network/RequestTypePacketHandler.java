@@ -1,14 +1,15 @@
 package cn.dancingsnow.antilootgame.network;
 
-import cpw.mods.fml.common.network.simpleimpl.IMessage;
-import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
-import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import net.minecraft.block.Block;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.EntityPlayerMP;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ChatComponentText;
 import net.minecraft.world.World;
+
+import cpw.mods.fml.common.network.simpleimpl.IMessage;
+import cpw.mods.fml.common.network.simpleimpl.IMessageHandler;
+import cpw.mods.fml.common.network.simpleimpl.MessageContext;
 import ru.timeconqueror.lootgames.api.block.SmartSubordinateBlock;
 import ru.timeconqueror.lootgames.common.block.tile.MSMasterTile;
 import ru.timeconqueror.lootgames.minigame.minesweeper.GameMineSweeper;
@@ -18,6 +19,7 @@ import ru.timeconqueror.lootgames.minigame.minesweeper.Type;
 import ru.timeconqueror.lootgames.utils.future.BlockPos;
 
 public class RequestTypePacketHandler implements IMessageHandler<RequestTypePacket, IMessage> {
+
     @Override
     public IMessage onMessage(RequestTypePacket message, MessageContext ctx) {
         EntityPlayer player = ctx.getServerHandler().playerEntity;
